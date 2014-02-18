@@ -2150,7 +2150,8 @@ DefaultSettings.prototype = {
   type: 'text',
   copyable: true,
   debug: false, //shows debug overlays in Walkontable
-  clickBeginsEditing: false
+  clickBeginsEditing: false,
+  navigateBeginsEditing: false
 };
 Handsontable.DefaultSettings = DefaultSettings;
 

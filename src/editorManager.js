@@ -56,6 +56,9 @@
                   }
 
                   moveSelectionUp(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -67,6 +70,9 @@
                   }
 
                   moveSelectionDown(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -78,6 +84,9 @@
                   }
 
                   moveSelectionRight(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -89,6 +98,9 @@
                   }
 
                   moveSelectionLeft(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -102,6 +114,9 @@
                   else {
                     selection.transformStart(tabMoves.row, tabMoves.col, true); //move selection right (add a new column if needed)
                   }
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
                   break;
@@ -126,6 +141,9 @@
                     }
 
                     moveSelectionAfterEnter(event.shiftKey);
+				    if (instance.getSettings().navigateBeginsEditing) {
+				  	  that.openEditor();
+				    }
 
                   } else {
 

@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * http://handsontable.com/
  *
- * Date: Tue Feb 18 2014 11:11:06 GMT-0500 (Eastern Standard Time)
+ * Date: Tue Feb 18 2014 11:57:12 GMT-0500 (Eastern Standard Time)
  */
 /*jslint white: true, browser: true, plusplus: true, indent: 4, maxerr: 50 */
 
@@ -2337,7 +2337,8 @@ DefaultSettings.prototype = {
   type: 'text',
   copyable: true,
   debug: false, //shows debug overlays in Walkontable
-  clickBeginsEditing: false
+  clickBeginsEditing: false,
+  navigateBeginsEditing: false
 };
 Handsontable.DefaultSettings = DefaultSettings;
 
@@ -2934,6 +2935,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                   }
 
                   moveSelectionUp(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -2945,6 +2949,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                   }
 
                   moveSelectionDown(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -2956,6 +2963,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                   }
 
                   moveSelectionRight(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -2967,6 +2977,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                   }
 
                   moveSelectionLeft(event.shiftKey);
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
 
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
@@ -2980,6 +2993,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                   else {
                     selection.transformStart(tabMoves.row, tabMoves.col, true); //move selection right (add a new column if needed)
                   }
+				  if (instance.getSettings().navigateBeginsEditing) {
+				  	that.openEditor();
+				  }
                   event.preventDefault();
                   event.stopPropagation(); //required by HandsontableEditor
                   break;
@@ -3004,6 +3020,9 @@ Handsontable.TableView.prototype.maximumVisibleElementHeight = function (top) {
                     }
 
                     moveSelectionAfterEnter(event.shiftKey);
+				    if (instance.getSettings().navigateBeginsEditing) {
+				  	  that.openEditor();
+				    }
 
                   } else {
 
